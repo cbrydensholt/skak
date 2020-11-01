@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update A Product</title>
+    <link th:href="@{styles.css}" href="../static/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Turneringer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/alleturneringer">Turnerings Oversigt</a>
+            <a href="/opretturnering">Opret turnering</a>
+        </div>
+
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Medlemmer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/opretmedlem">Opret medlem</a>
+            <a href="/allemedlemmer">Medlems Oversigt</a>
+            <a href="/resultatberegning">Indtast Nyt Kamp Resultat</a>
+
+        </div>
+
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Medarbejdere
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/createmedarbejder">Opret medarbejder</a>
+            <a href="/allemedarbejdere">Medarbejder oversigt</a>
+        </div>
+
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Restance
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/allerestancer">Restance oversigt</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<h1>Update A Product</h1>
+
+<div class="container">
+
+
+
+    <form action="/updatedmedlem" method="post">
+
+        <label for="medlemsId">Medlems ID</label>
+        <input type="text" name="medlemsId" id="medlemsId" th:value="${medlem.medlemsId}" readonly>
+        <br>
+        <label for="medlemsFornavn">Fornavn</label>
+        <input type="text" name="medlemsFornavn" id="medlemsFornavn" th:value="${medlem.medlemsFornavn}" >
+        <br>
+        <label for="medlemsEfternavn">Efternavn:</label>
+        <input type="text" name="medlemsEfternavn" id="medlemsEfternavn" th:value="${medlem.medlemsEfternavn}" >
+        <br>
+        <label for="medlemsTelefon">Telefon NR:</label>
+        <input type="text" name="medlemsTelefon" id="medlemsTelefon" th:value="${medlem.medlemsTelefon}" >
+        <br>
+        <label for="medlemsKategori">Kategori</label>
+        <input type="text" name="medlemsKategori" id="medlemsKategori" th:value="${medlem.medlemsKategori}"  >
+        <br>
+        <label for="medlemsRating">Rating:</label>
+        <input type="text" name="medlemsRating" id="medlemsRating" th:value="${medlem.medlemsRating}" >
+
+        <button type="submit" name="submit" button class="btn btn-create">Update</button>
+    </form>
+</div>
+
+</body>
+</html>

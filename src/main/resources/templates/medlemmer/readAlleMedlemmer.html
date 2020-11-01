@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alle medlemmer</title>
+    <link th:href="@{styles.css}" href="../static/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Turneringer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/alleturneringer">Turnerings Oversigt</a>
+            <a href="/opretturnering">Opret turnering</a>
+        </div>
+
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Medlemmer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/opretmedlem">Opret medlem</a>
+            <a href="/allemedlemmer">Medlems Oversigt</a>
+            <a href="/resultatberegning">Indtast Nyt Kamp Resultat</a>
+
+        </div>
+
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Medarbejdere
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/createmedarbejder">Opret medarbejder</a>
+            <a href="/allemedarbejdere">Medarbejder oversigt</a>
+        </div>
+
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Restance
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/allerestancer">Restance oversigt</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<h1>Medlems Oversigt</h1>
+
+
+
+
+<div class="container">
+
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>Telefon Nummer</th>
+            <th>Kategori</th>
+            <th>Rating</th>
+        </tr>
+
+
+        <tr th:each="medlem : ${allemedlemmer}">
+            <td th:text="${medlem.medlemsId}"></td>
+            <td th:text="${medlem.medlemsFornavn}"></td>
+            <td th:text="${medlem.medlemsEfternavn}"></td>
+            <td th:text="${medlem.medlemsTelefon}"></td>
+            <td th:text="${medlem.medlemsKategori}">
+            <td th:text="${medlem.medlemsRating}">
+            <td><a th:href="@{/deletemedlem(medlemsId=${medlem.medlemsId})}"><button class="btn btn-del"> Delete </button></a></th>
+            <td><a th:href="@{/updatemedlem(medlemsId=${medlem.medlemsId})}"><button class="btn btn-ed"> Update </button></a></th>
+            <td><a th:href="@{/singlemedlem(medlemsId=${medlem.medlemsId})}"><button class="btn btn-details"> Details</button></a></td>
+
+        </tr>
+
+
+    </table>
+</div>
+
+
+</body>
+</html>

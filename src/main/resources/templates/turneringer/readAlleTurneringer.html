@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Selection</title>
+    <link th:href="@{styles.css}" href="../static/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Turneringer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/alleturneringer">Turnerings Oversigt</a>
+            <a href="/opretturnering">Opret turnering</a>
+        </div>
+
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Medlemmer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/opretmedlem">Opret medlem</a>
+            <a href="/allemedlemmer">Medlems Oversigt</a>
+            <a href="/resultatberegning">Indtast Nyt Kamp Resultat</a>
+
+        </div>
+
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Medarbejdere
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/createmedarbejder">Opret medarbejder</a>
+            <a href="/allemedarbejdere">Medarbejder oversigt</a>
+        </div>
+
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Restance
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/allerestancer">Restance oversigt</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<h1>Medlems Oversigt</h1>
+
+
+
+
+<div class="container">
+
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Turnerings Navn</th>
+            <th>Antal Deltagere</th>
+            <th>Dato</th>
+            <th>Deltager Kategori</th>
+        </tr>
+
+
+        <tr th:each="turnering : ${alleturneringer}">
+            <td th:text="${turnering.turneringsId}"></td>
+            <td th:text="${turnering.turneringsNavn}"></td>
+            <td th:text="${turnering.antalDeltagere}"></td>
+            <td th:text="${turnering.dato}"></td>
+            <td th:text="${turnering.deltagerKategori}">
+            <td><a th:href="@{/deleteturnering(turneringsId=${turnering.turneringsId})}"><button class="btn btn-del"> Delete </button></a></th>
+            <td><a th:href="@{/updateturnering(turneringsId=${turnering.turneringsId})}"><button class="btn btn-ed"> Update </button></a></th>
+            <td><a th:href="@{/singleturnering(turneringsId=${turnering.turneringsId})}"><button class="btn btn-details"> Details</button></a></td>
+
+        </tr>
+
+
+    </table>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enkel Medarbejder</title>
+    <link th:href="@{styles.css}" href="../static/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Turneringer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/alleturneringer">Turnerings Oversigt</a>
+            <a href="/opretturnering">Opret turnering</a>
+        </div>
+
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Medlemmer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/opretmedlem">Opret medlem</a>
+            <a href="/allemedlemmer">Medlems Oversigt</a>
+            <a href="/resultatberegning">Indtast Nyt Kamp Resultat</a>
+
+        </div>
+
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Medarbejdere
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/createmedarbejder">Opret medarbejder</a>
+            <a href="/allemedarbejdere">Medarbejder oversigt</a>
+        </div>
+
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Restance
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/allerestancer">Restance oversigt</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h1>Details</h1>
+    <p>Medarbejder ID: <span th:text="${medarbejder.arbejderId}"></span></p>
+    <p>Medarbejder fornavn: <span th:text="${medarbejder.arbejderFornavn}"></span> </p>
+    <p>Medarbejder efternavn: <span th:text="${medarbejder.arbejderEfternavn}"></span></p>
+    <p>Medarbejder TLF nr: <span th:text="${medarbejder.arbejderTelefon}"></span> </p>
+    <p>Medarbejder Stilling: <span th:text="${medarbejder.arbejderTitel}"></span> </p>
+</div>
+</body>
+</html>
+
+</body>
+</html>

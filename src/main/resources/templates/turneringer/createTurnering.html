@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{styles.css}" href="../static/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">Turneringer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/alleturneringer">Turnerings Oversigt</a>
+            <a href="/opretturnering">Opret turnering</a>
+        </div>
+
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Medlemmer
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/opretmedlem">Opret medlem</a>
+            <a href="/allemedlemmer">Medlems Oversigt</a>
+            <a href="/resultatberegning">Indtast Nyt Kamp Resultat</a>
+
+        </div>
+
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Medarbejdere
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/createmedarbejder">Opret medarbejder</a>
+            <a href="/allemedarbejdere">Medarbejder oversigt</a>
+        </div>
+
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Restance
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/allerestancer">Restance oversigt</a>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <h1>Opret nyt medlem</h1>
+    <form action="/createdTurnering" method="post">
+
+        <label for="turneringsNavn">Turnerings Navn</label><br>
+        <input type="text" name="turneringsNavn" id="turneringsNavn">
+        <br>
+        <label for="antalDeltagere">Antal Deltagere</label><br>
+        <input type="text" name="antalDeltagere" id="antalDeltagere">
+        <br>
+        <label for="dato">Dato</label><br>
+        <input type="text" name="dato" id="dato">
+        <br>
+        <label for="deltagerKategori"> Deltager Kategori </label><br>
+        <input type="text" name="deltagerKategori" id="deltagerKategori">
+        <br>
+
+        <button type="submit" name="submit" button class="btn btn-create">Opret</button>
+    </form>
+</div>
+
+
+
+
+
+</body>
+
+
+</body>
+</html>
